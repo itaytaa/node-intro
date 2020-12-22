@@ -24,7 +24,7 @@ http.createServer((request, response) => {
             response.end();
         });
     } else if (request.url === '/dice') {
-        let randomNum = getRandomInt(1, 7)
+        let randomNum = Math.floor(Math.random() * (7 - 1) + 1)
         if (randomNum === 4) {
             console.log(randomNum)
             response.writeHead(200, {'Content-Type': 'text/html'})
@@ -45,11 +45,7 @@ http.createServer((request, response) => {
     }
 }).listen(8080);
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-  }
+
   
 
 
