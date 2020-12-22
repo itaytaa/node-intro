@@ -28,13 +28,13 @@ http.createServer((request, response) => {
         if (randomNum === 4) {
             console.log(randomNum)
             response.writeHead(200, {'Content-Type': 'text/html'})
-            response.write('<h1>You WON!</h1>')
+            response.write('<h1 style="color:green;text-align:center; margin:200px;">You WON!</h1>')
             response.end();
             return
         } else {
             console.log(randomNum)
             response.writeHead(200, {'Content-Type': 'text/html'})
-            response.write('<h1>You lost :(</h1>')
+            response.write('<h1 style="color:red;text-align:center; margin:200px;">You lost :(</h1>')
             response.end();
             return
         }
